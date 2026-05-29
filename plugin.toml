@@ -1,0 +1,116 @@
+schema = "animus.plugin.v1"
+name = "animus-subject-notion"
+version = "0.1.0"
+plugin_kind = "subject_backend"
+description = "Notion pages subject backend plugin for Animus"
+protocol = "stdio"
+
+[binary]
+default = "animus-subject-notion"
+
+[capabilities]
+streaming = false
+progress = false
+cancellation = false
+methods = [
+  "subject/list",
+  "subject/get",
+  "subject/schema",
+  "subject/create",
+  "subject/update",
+  "subject/status",
+  "notion.page/list",
+  "notion.page/get",
+  "notion.page/schema",
+  "notion.page/create",
+  "notion.page/update",
+  "notion.page/status",
+  "health/check",
+]
+subject_kinds = ["notion.page"]
+
+[[env]]
+key = "NOTION_TOKEN"
+description = "Notion internal integration token."
+required = true
+sensitive = true
+
+[[env]]
+key = "NOTION_DATA_SOURCE_ID"
+description = "Notion data source id used for list and create calls. NOTION_DATABASE_ID is accepted as a compatibility alias."
+required = true
+
+[[env]]
+key = "NOTION_PARENT_TYPE"
+description = "Parent/query type: 'data_source' or 'database'. Defaults to 'data_source'."
+required = false
+
+[[env]]
+key = "NOTION_VERSION"
+description = "Notion-Version header. Defaults to '2025-09-03'."
+required = false
+
+[[env]]
+key = "NOTION_TITLE_PROPERTY"
+description = "Title property name. Defaults to 'Name'."
+required = false
+
+[[env]]
+key = "NOTION_STATUS_PROPERTY"
+description = "Status property name. Defaults to 'Status'."
+required = false
+
+[[env]]
+key = "NOTION_LABELS_PROPERTY"
+description = "Multi-select labels property name. Defaults to 'Tags'."
+required = false
+
+[[env]]
+key = "NOTION_DESCRIPTION_PROPERTY"
+description = "Rich text description property name. Defaults to 'Description'."
+required = false
+
+[[env]]
+key = "NOTION_ASSIGNEE_PROPERTY"
+description = "Assignee property name. Defaults to 'Assignee'."
+required = false
+
+[[env]]
+key = "NOTION_STATUS_PROPERTY_TYPE"
+description = "Writable status property type. Defaults to 'status'."
+required = false
+
+[[env]]
+key = "NOTION_LABELS_PROPERTY_TYPE"
+description = "Writable labels property type. Defaults to 'multi_select'."
+required = false
+
+[[env]]
+key = "NOTION_ASSIGNEE_PROPERTY_TYPE"
+description = "Writable assignee property type. Defaults to 'rich_text'."
+required = false
+
+[[env]]
+key = "NOTION_READY_STATUS"
+description = "Native Notion status name for Animus ready."
+required = false
+
+[[env]]
+key = "NOTION_IN_PROGRESS_STATUS"
+description = "Native Notion status name for Animus in-progress."
+required = false
+
+[[env]]
+key = "NOTION_BLOCKED_STATUS"
+description = "Native Notion status name for Animus blocked."
+required = false
+
+[[env]]
+key = "NOTION_DONE_STATUS"
+description = "Native Notion status name for Animus done."
+required = false
+
+[[env]]
+key = "NOTION_CANCELLED_STATUS"
+description = "Native Notion status name for Animus cancelled."
+required = false
