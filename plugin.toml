@@ -1,6 +1,6 @@
 schema = "animus.plugin.v1"
 name = "animus-subject-notion"
-version = "0.1.0"
+version = "0.1.1"
 plugin_kind = "subject_backend"
 description = "Notion pages subject backend plugin for Animus"
 protocol = "stdio"
@@ -47,7 +47,7 @@ required = false
 
 [[env]]
 key = "NOTION_VERSION"
-description = "Notion-Version header. Defaults to '2025-09-03'."
+description = "Notion-Version header. Defaults to '2026-03-11'."
 required = false
 
 [[env]]

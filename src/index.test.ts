@@ -4,7 +4,7 @@ import { createProperties, labelsFromProperty, matchesFilters, parsePageId, prop
 const config = {
   baseUrl: "https://api.notion.com/v1",
   token: "token",
-  notionVersion: "2025-09-03",
+  notionVersion: "2026-03-11",
   parentId: "source-id",
   parentType: "data_source" as const,
   titleProperty: "Name",

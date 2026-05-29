@@ -1,7 +1,7 @@
 import { definePlugin, PluginKind, type Subject, type SubjectBackend, type SubjectCreateRequest, type SubjectListParams, type SubjectPatch, type SubjectStatus } from "@launchapp-dev/animus-plugin-sdk";
 
 const NAME = "animus-subject-notion";
-const VERSION = "0.1.0";
+const VERSION = "0.1.1";
 const SUBJECT_KIND = "notion.page";
 
 type ParentType = "data_source" | "database";
@@ -85,7 +85,7 @@ function readConfig(): Config {
   return {
     baseUrl: (process.env.NOTION_BASE_URL ?? "https://api.notion.com/v1").replace(/\/+$/, ""),
     token,
-    notionVersion: process.env.NOTION_VERSION ?? "2025-09-03",
+    notionVersion: process.env.NOTION_VERSION ?? "2026-03-11",
     parentId,
     parentType,
     titleProperty: process.env.NOTION_TITLE_PROPERTY ?? "Name",
@@ -433,7 +433,7 @@ const plugin = definePlugin({
     { name: "NOTION_TOKEN", description: "Notion internal integration token.", required: true, sensitive: true },
     { name: "NOTION_DATA_SOURCE_ID", description: "Notion data source id. NOTION_DATABASE_ID is accepted as an alias.", required: true },
     { name: "NOTION_PARENT_TYPE", description: "Parent/query type: data_source or database. Defaults to data_source.", required: false },
-    { name: "NOTION_VERSION", description: "Notion-Version header. Defaults to 2025-09-03.", required: false },
+    { name: "NOTION_VERSION", description: "Notion-Version header. Defaults to 2026-03-11.", required: false },
     { name: "NOTION_TITLE_PROPERTY", description: "Title property name. Defaults to Name.", required: false },
     { name: "NOTION_STATUS_PROPERTY", description: "Status property name. Defaults to Status.", required: false },
     { name: "NOTION_LABELS_PROPERTY", description: "Labels property name. Defaults to Tags.", required: false },

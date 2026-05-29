@@ -20,7 +20,7 @@ Optional environment:
 
 - `NOTION_PARENT_TYPE` defaults to `data_source`; set `database` for older
   Notion database query/create paths.
-- `NOTION_VERSION` defaults to `2025-09-03`.
+- `NOTION_VERSION` defaults to `2026-03-11`.
 - `NOTION_TITLE_PROPERTY` defaults to `Name`.
 - `NOTION_STATUS_PROPERTY` defaults to `Status`.
 - `NOTION_LABELS_PROPERTY` defaults to `Tags`.
